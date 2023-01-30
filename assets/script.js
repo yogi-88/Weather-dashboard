@@ -42,6 +42,21 @@ $('#search-form').on('submit', function(event) {
             }
 
             // weathers[0] will be today's weather
+            var city = response[0].name;
+            console.log(city)
+            var currentDate = new Date();
+            console.log(currentDate)
+            $('#current-city').text(city + " (" + currentDate.toLocaleDateString() + ")")
+            var temp = weatherResponse.list[0].main.temp;
+            console.log(temp)
+            var wind = weatherResponse.list[0].wind.speed;
+            console.log(wind)
+            var humidity = weatherResponse.list[0].main.humidity;
+            console.log(humidity)
+            $('#current-temperature').text(temp + " °C");
+            $('#current-wind').text(wind);
+            $('#current-humidity').text(humidity);
+
             // weathers[1 - 4] will be 5 days forecast
             // TODO: put today's weather in container for today's weather
             // TODO: put 5 day's forecast weather in container for the 5 day forecast
