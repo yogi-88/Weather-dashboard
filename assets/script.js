@@ -7,7 +7,7 @@ var cityListEl = $('#history');
 $('#search-form').on('submit', function(event) {
     event.preventDefault();
     const userInput = $('#search-input').val();
-    const queryURL = 'http://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=5&appid=' + apiKey;
+    const queryURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + userInput + '&limit=5&appid=' + apiKey;
     // Put the search value on the history list container
     // if there is nothing in the form entered, don't print tothe page
     if (!userInput) {
@@ -29,7 +29,7 @@ $('#search-form').on('submit', function(event) {
         const lat = response[0].lat;
         const lon = response [0].lon;
 
-        const weatherQueryUrl = 'http://api.openweathermap.org/data/2.5/forecast?units=metric&lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
+        const weatherQueryUrl = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
         // Call 5 day weather forecast API after we have city lat and long value
         $.ajax({
             url : weatherQueryUrl
