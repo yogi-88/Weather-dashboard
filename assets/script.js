@@ -28,7 +28,7 @@ $('#search-form').on('submit', function(event) {
     }).then (function(response){
         const lat = response[0].lat;
         const lon = response [0].lon;
-
+        
         const weatherQueryUrl = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
         // Call 5 day weather forecast API after we have city lat and long value
         $.ajax({
