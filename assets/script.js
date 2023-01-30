@@ -39,9 +39,9 @@ $('#search-form').on('submit', function(event) {
             const weathers = [];
             for (let i = 0; i < weatherList.length; i += 8) {
                 weathers.push(weatherList[i]);
-                console.log(weathers)
+                
             }
-
+            console.log(weathers)
             // weathers[0] will be today's weather
              // TODO: put today's weather in container for today's weather            
             var city = response[0].name;
