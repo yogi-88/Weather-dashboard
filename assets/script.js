@@ -39,6 +39,7 @@ $('#search-form').on('submit', function(event) {
             const weathers = [];
             for (let i = 0; i < weatherList.length; i += 8) {
                 weathers.push(weatherList[i]);
+                console.log(weathers)
             }
 
             // weathers[0] will be today's weather
@@ -56,10 +57,75 @@ $('#search-form').on('submit', function(event) {
             console.log(humidity)
             $('#current-temperature').text(temp + " °C");
             $('#current-wind').text(wind + " KPH");
-            $('#current-humidity').text(humidity + " %");
+            $('#current-humidity').text(humidity + "%");
 
             // weathers[1 - 4] will be 5 days forecast
             // TODO: put 5 day's forecast weather in container for the 5 day forecast
+            var date01 = weathers[0].dt_txt;
+            //format date
+            var fdate01 = moment(date01).format("DD/MM/YYYY");
+            console.log(date01)
+            var temp01 = weathers[0].main.temp;
+            console.log(temp01)
+            var wind01 = weathers[0].wind.speed;
+            console.log(wind01)
+            var humidity01 = weathers[0].main.humidity;
+            console.log(humidity01)
+            $('#date01').text(fdate01);
+            $('#forecast-temperature01').text(temp01 + " °C");
+            $('#forecast-wind01').text(wind01 + " KPH");
+            $('#forecast-humidity01').text(humidity01 + "%");
+
+            var date02 = weathers[1].dt_txt;
+            //format date
+            var fdate02 = moment(date02).format("DD/MM/YYYY");
+            
+            var temp02 = weathers[1].main.temp;
+            
+            var wind02 = weathers[1].wind.speed;
+            
+            var humidity02 = weathers[1].main.humidity;
+            
+            $('#date02').text(fdate02);
+            $('#forecast-temperature02').text(temp02 + " °C");
+            $('#forecast-wind02').text(wind02 + " KPH");
+            $('#forecast-humidity02').text(humidity02 + "%");
+
+            var date03 = weathers[2].dt_txt;
+            //format date
+            var fdate03 = moment(date03).format("DD/MM/YYYY");
+            var temp03 = weathers[2].main.temp;
+            var wind03 = weathers[2].wind.speed;
+            var humidity03 = weathers[2].main.humidity;
+            
+            $('#date03').text(fdate03);
+            $('#forecast-temperature03').text(temp03 + " °C");
+            $('#forecast-wind03').text(wind03 + " KPH");
+            $('#forecast-humidity03').text(humidity03 + "%");
+
+            var date04 = weathers[3].dt_txt;
+            //format date
+            var fdate04 = moment(date04).format("DD/MM/YYYY");
+            var temp04 = weathers[3].main.temp;
+            var wind04 = weathers[3].wind.speed;
+            var humidity04 = weathers[3].main.humidity;
+            
+            $('#date04').text(fdate04);
+            $('#forecast-temperature04').text(temp04 + " °C");
+            $('#forecast-wind04').text(wind04 + " KPH");
+            $('#forecast-humidity04').text(humidity04 + "%");
+
+            var date05 = weathers[4].dt_txt;
+            //format date
+            var fdate05 = moment(date05).format("DD/MM/YYYY");
+            var temp05 = weathers[4].main.temp;
+            var wind05 = weathers[4].wind.speed;
+            var humidity05 = weathers[4].main.humidity;
+            
+            $('#date05').text(fdate05);
+            $('#forecast-temperature05').text(temp05 + " °C");
+            $('#forecast-wind05').text(wind05 + " KPH");
+            $('#forecast-humidity05').text(humidity05 + "%");
 
             // Icon URL http://openweathermap.org/img/w/" + iconcode + ".png"
 
