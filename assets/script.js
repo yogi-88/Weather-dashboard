@@ -16,7 +16,7 @@ $('#search-form').on('submit', function(event) {
     }
     //print to the page
     
-    cityListEl.append('<div>' + userInput + '</div>');
+    cityListEl.append("<li class='breadcrumb'>" + userInput + "</li>");
     //clear the form input element
     $('input[name="search-input"]').val('');
     //Add the history to local storage

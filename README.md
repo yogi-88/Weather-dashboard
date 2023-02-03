@@ -42,11 +42,16 @@ The following image shows the web application's appearance and functionality:
 
 
 
+### Technologies used
+HTML, CSS, Bootstrap, JQuery
+
+### Third party resources
+Openweather API
 
 
 
 
-## Deployed Link
+### Deployed Link
 
 * The URL of the functional, deployed application:
 https://yogi-88.github.io/Weather-dashboard/
