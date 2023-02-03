@@ -30,6 +30,7 @@ $('#search-form').on('submit', function(event) {
         const lon = response [0].lon;
         
         const weatherQueryUrl = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
+        
         // Call 5 day weather forecast API after we have city lat and long value
         $.ajax({
             url : weatherQueryUrl
@@ -45,16 +46,18 @@ $('#search-form').on('submit', function(event) {
             // weathers[0] will be today's weather
              // TODO: put today's weather in container for today's weather            
             var city = response[0].name;
-            console.log(city)
+            
             var currentDate = new Date();
-            console.log(currentDate)
+            
             $('#current-city').text(city + " (" + currentDate.toLocaleDateString() + ")")
+            var iconcode = weathers[0].weather[0].icon;
+            var iconURL = "http://openweathermap.org/img/w/" + iconcode + ".png";
             var temp = weatherResponse.list[0].main.temp;
-            console.log(temp)
+            
             var wind = weatherResponse.list[0].wind.speed;
-            console.log(wind)
+            
             var humidity = weatherResponse.list[0].main.humidity;
-            console.log(humidity)
+            $('#wicon').attr('src', iconURL);
             $('#current-temperature').text(temp + " °C");
             $('#current-wind').text(wind + " KPH");
             $('#current-humidity').text(humidity + "%");
@@ -64,14 +67,19 @@ $('#search-form').on('submit', function(event) {
             var date01 = weathers[0].dt_txt;
             //format date
             var fdate01 = moment(date01).format("DD/MM/YYYY");
-            console.log(date01)
+            
+            var iconcode = weathers[0].weather[0].icon;
+            var iconURL = "http://openweathermap.org/img/w/" + iconcode + ".png";
+            
+            
             var temp01 = weathers[0].main.temp;
-            console.log(temp01)
+            
             var wind01 = weathers[0].wind.speed;
-            console.log(wind01)
+           
             var humidity01 = weathers[0].main.humidity;
-            console.log(humidity01)
+            
             $('#date01').text(fdate01);
+            $('#wicon01').attr('src', iconURL);
             $('#forecast-temperature01').text(temp01 + " °C");
             $('#forecast-wind01').text(wind01 + " KPH");
             $('#forecast-humidity01').text(humidity01 + "%");
@@ -79,14 +87,18 @@ $('#search-form').on('submit', function(event) {
             var date02 = weathers[1].dt_txt;
             //format date
             var fdate02 = moment(date02).format("DD/MM/YYYY");
+            var iconcode = weathers[1].weather[0].icon;
+            var iconURL = "http://openweathermap.org/img/w/" + iconcode + ".png";
             
             var temp02 = weathers[1].main.temp;
             
             var wind02 = weathers[1].wind.speed;
             
             var humidity02 = weathers[1].main.humidity;
+            console.log(humidity02)
             
             $('#date02').text(fdate02);
+            $('#wicon02').attr('src', iconURL);
             $('#forecast-temperature02').text(temp02 + " °C");
             $('#forecast-wind02').text(wind02 + " KPH");
             $('#forecast-humidity02').text(humidity02 + "%");
@@ -94,11 +106,14 @@ $('#search-form').on('submit', function(event) {
             var date03 = weathers[2].dt_txt;
             //format date
             var fdate03 = moment(date03).format("DD/MM/YYYY");
+            var iconcode = weathers[2].weather[0].icon;
+            var iconURL = "http://openweathermap.org/img/w/" + iconcode + ".png";
             var temp03 = weathers[2].main.temp;
             var wind03 = weathers[2].wind.speed;
             var humidity03 = weathers[2].main.humidity;
             
             $('#date03').text(fdate03);
+            $('#wicon03').attr('src', iconURL);
             $('#forecast-temperature03').text(temp03 + " °C");
             $('#forecast-wind03').text(wind03 + " KPH");
             $('#forecast-humidity03').text(humidity03 + "%");
@@ -106,11 +121,14 @@ $('#search-form').on('submit', function(event) {
             var date04 = weathers[3].dt_txt;
             //format date
             var fdate04 = moment(date04).format("DD/MM/YYYY");
+            var iconcode = weathers[3].weather[0].icon;
+            var iconURL = "http://openweathermap.org/img/w/" + iconcode + ".png";
             var temp04 = weathers[3].main.temp;
             var wind04 = weathers[3].wind.speed;
             var humidity04 = weathers[3].main.humidity;
             
             $('#date04').text(fdate04);
+            $('#wicon04').attr('src', iconURL);
             $('#forecast-temperature04').text(temp04 + " °C");
             $('#forecast-wind04').text(wind04 + " KPH");
             $('#forecast-humidity04').text(humidity04 + "%");
@@ -118,11 +136,14 @@ $('#search-form').on('submit', function(event) {
             var date05 = weathers[4].dt_txt;
             //format date
             var fdate05 = moment(date05).format("DD/MM/YYYY");
+            var iconcode = weathers[4].weather[0].icon;
+            var iconURL = "http://openweathermap.org/img/w/" + iconcode + ".png";
             var temp05 = weathers[4].main.temp;
             var wind05 = weathers[4].wind.speed;
             var humidity05 = weathers[4].main.humidity;
             
             $('#date05').text(fdate05);
+            $('#wicon05').attr('src', iconURL);
             $('#forecast-temperature05').text(temp05 + " °C");
             $('#forecast-wind05').text(wind05 + " KPH");
             $('#forecast-humidity05').text(humidity05 + "%");
